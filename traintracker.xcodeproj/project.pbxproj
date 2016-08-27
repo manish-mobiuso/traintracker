@@ -47,6 +47,8 @@
 		DE7612F81D7169B90093B345 /* UIUserNotifications+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D81D7169B90093B345 /* UIUserNotifications+Operations.swift */; };
 		DE7612F91D7169B90093B345 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D91D7169B90093B345 /* URLSessionTaskOperation.swift */; };
 		DE7612FA1D7169B90093B345 /* UserNotificationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612DA1D7169B90093B345 /* UserNotificationCondition.swift */; };
+		DE7612FC1D716DD90093B345 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7612FB1D716DD90093B345 /* CoreLocation.framework */; };
+		DE7612FE1D716DE00093B345 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7612FD1D716DE00093B345 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		DE7612D81D7169B90093B345 /* UIUserNotifications+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIUserNotifications+Operations.swift"; sourceTree = "<group>"; };
 		DE7612D91D7169B90093B345 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
 		DE7612DA1D7169B90093B345 /* UserNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCondition.swift; sourceTree = "<group>"; };
+		DE7612FB1D716DD90093B345 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DE7612FD1D716DE00093B345 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7612FE1D716DE00093B345 /* QuartzCore.framework in Frameworks */,
+				DE7612FC1D716DD90093B345 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +149,8 @@
 		DE76127B1D71676F0093B345 = {
 			isa = PBXGroup;
 			children = (
+				DE7612FD1D716DE00093B345 /* QuartzCore.framework */,
+				DE7612FB1D716DD90093B345 /* CoreLocation.framework */,
 				DE7612861D71676F0093B345 /* traintracker */,
 				DE7612A01D7167700093B345 /* traintrackerTests */,
 				DE7612AB1D7167700093B345 /* traintrackerUITests */,

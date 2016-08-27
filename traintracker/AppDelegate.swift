@@ -8,11 +8,19 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
+    var operationQueue: OperationQueue
+    var locationManager: CLLocationManager?
+
+    
+    override init() {
+        operationQueue = OperationQueue()
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -25,6 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
         let controller = masterNavigationController.topViewController as! MasterViewController
         controller.managedObjectContext = self.managedObjectContext
+        
+        self.locationManager = CLLocationManager()
+        self.locationManager!.delegate = self;
+
+        if #available(iOS 9.0, *) {
+            self.locationManager!.allowsBackgroundLocationUpdates = true
+        } else {
+            // Fallback on earlier versions
+        }
+
         return true
     }
 
@@ -125,6 +143,98 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             }
         }
     }
+    
+    // Location Manager
+    
+    func startCLVisitService() {
+        self.locationManager!.delegate = self;
+        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+            self.locationManager!.startMonitoringVisits()
+        } else {
+            self.locationManager!.requestAlwaysAuthorization()
+        }
+    }
+    
+    func stopMonitoringVisits() {
+        locationManager!.stopMonitoringVisits()
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        switch status {
+        case .NotDetermined:
+            manager.requestAlwaysAuthorization()
+            break
+        case .AuthorizedWhenInUse:
+            break
+        case .AuthorizedAlways:
+            NSNotificationCenter.defaultCenter().postNotificationName("requestAuthorizationAlways", object: nil)
+            break
+        case .Restricted:
+            // restricted by e.g. parental controls. User can't enable Location Services
+            NSNotificationCenter.defaultCenter().postNotificationName("requestNotAuthorized", object: nil)
+            break
+        case .Denied:
+            // user denied your app access to Location Services, but can grant access from Settings.app
+            NSNotificationCenter.defaultCenter().postNotificationName("requestNotAuthorized", object: nil)
+            break
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didVisit visit: CLVisit) {
+        //Introduced for debugging only, must be removed in the final build
+        let latitude:String = "\(visit.coordinate.latitude)"
+        let longitude:String = "\(visit.coordinate.longitude)"
+        AppDelegate.sendLocalNotification("location detection done")
+        
+        BackgroundTask.run(UIApplication.sharedApplication()) { backgroundTask in
+            if (true) {
+                backgroundTask.end()
+            } else {
+                backgroundTask.end()
+            }
+        }
+    }
+    
+    class func sendLocalNotification(notimMssage:String){
+        let localNotification = UILocalNotification()
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
+        localNotification.alertBody = notimMssage
+        localNotification.timeZone = NSTimeZone.defaultTimeZone()
+        // localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    }
 
 }
 
+class BackgroundTask {
+    private let application: UIApplication
+    private var identifier = UIBackgroundTaskInvalid
+    
+    init(application: UIApplication) {
+        self.application = application
+    }
+    
+    class func run(application: UIApplication, handler: (BackgroundTask) -> ()) {
+        // NOTE: The handler must call end() when it is done
+        
+        let backgroundTask = BackgroundTask(application: application)
+        backgroundTask.begin()
+        handler(backgroundTask)
+    }
+    
+    func begin() {
+        self.identifier = application.beginBackgroundTaskWithName("CLVisitHandler", expirationHandler: {
+            self.end()
+        })
+    }
+    
+    func end() {
+        print(application.backgroundTimeRemaining)
+        
+        if (identifier != UIBackgroundTaskInvalid) {
+            application.endBackgroundTask(identifier)
+        }
+        
+        identifier = UIBackgroundTaskInvalid
+    }
+}
