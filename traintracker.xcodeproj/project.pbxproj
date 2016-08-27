@@ -548,6 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = traintracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiuso.traintracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,6 +560,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = traintracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiuso.traintracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -630,6 +632,7 @@
 				DE7612B31D7167700093B345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE7612B41D7167700093B345 /* Build configuration list for PBXNativeTarget "traintrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -638,6 +641,7 @@
 				DE7612B61D7167700093B345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE7612B71D7167700093B345 /* Build configuration list for PBXNativeTarget "traintrackerUITests" */ = {
 			isa = XCConfigurationList;
@@ -646,6 +650,7 @@
 				DE7612B91D7167700093B345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
