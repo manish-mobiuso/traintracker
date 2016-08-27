@@ -12,7 +12,7 @@ class DetailViewController: UITableViewController {
 
 //    @IBOutlet weak var tableView: UITableView!
 
-    var stations : [NSString] = []
+    var stations : [NSDictionary] = []
 
     var detailItem: AnyObject? {
         didSet {
@@ -27,9 +27,20 @@ class DetailViewController: UITableViewController {
 
     override func viewDidLoad() {
         
-        stations.append("station1")
-        stations.append("station2")
-
+        if let path = NSBundle.mainBundle().pathForResource("stationlist", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let stationlist: [NSDictionary] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
+                for station: NSDictionary in stationlist {
+                    stations.append(station)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        
         super.viewDidLoad()
         self.configureView()
     }
@@ -71,7 +82,7 @@ class DetailViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StationCell", forIndexPath: indexPath)
         let object = self.stations[indexPath.row]
-        self.configureCell(cell, withObject: object)
+        self.configureCell(cell, withObject: object["Station"] as! NSString)
         return cell
     }
     
