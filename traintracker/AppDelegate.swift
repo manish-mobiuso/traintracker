@@ -146,17 +146,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     // Location Manager
     
-    func startCLVisitService() {
+    func startMonitoringLocations() {
         self.locationManager!.delegate = self;
         if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
-            self.locationManager!.startMonitoringVisits()
+            self.locationManager!.startMonitoringSignificantLocationChanges()
         } else {
             self.locationManager!.requestAlwaysAuthorization()
         }
     }
     
-    func stopMonitoringVisits() {
-        locationManager!.stopMonitoringVisits()
+    func stopMonitoringLocations() {
+        locationManager!.stopMonitoringSignificantLocationChanges()
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -180,11 +180,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
     }
     
-    func locationManager(manager: CLLocationManager, didVisit visit: CLVisit) {
-        //Introduced for debugging only, must be removed in the final build
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let visit: CLLocation = locations[0];
         let latitude:String = "\(visit.coordinate.latitude)"
         let longitude:String = "\(visit.coordinate.longitude)"
-        AppDelegate.sendLocalNotification("location detection done")
+        AppDelegate.sendLocalNotification("location detection done \(latitude):\(longitude)")
         
         BackgroundTask.run(UIApplication.sharedApplication()) { backgroundTask in
             if (true) {
@@ -223,7 +223,7 @@ class BackgroundTask {
     }
     
     func begin() {
-        self.identifier = application.beginBackgroundTaskWithName("CLVisitHandler", expirationHandler: {
+        self.identifier = application.beginBackgroundTaskWithName("CLLocationHandler", expirationHandler: {
             self.end()
         })
     }
