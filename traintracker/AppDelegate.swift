@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let navigationController = self.window!.rootViewController as! UINavigationController
-        let masterNavigationController = navigationController
+//        let navigationController = self.window!.rootViewController as! UINavigationController
+//        let masterNavigationController = navigationController
 //        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
 //        splitViewController.delegate = self
 //

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B7539261D718B07009EFCE2 /* stationlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539251D718B07009EFCE2 /* stationlist.json */; };
+		1B7539271D718B07009EFCE2 /* stationlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539251D718B07009EFCE2 /* stationlist.json */; };
+		1B7539281D718B07009EFCE2 /* stationlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539251D718B07009EFCE2 /* stationlist.json */; };
 		DE7612881D71676F0093B345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612871D71676F0093B345 /* AppDelegate.swift */; };
 		DE76128B1D71676F0093B345 /* traintracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE7612891D71676F0093B345 /* traintracker.xcdatamodeld */; };
 		DE76128D1D71676F0093B345 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76128C1D71676F0093B345 /* MasterViewController.swift */; };
@@ -69,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B7539251D718B07009EFCE2 /* stationlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = stationlist.json; path = Resources/stationlist.json; sourceTree = "<group>"; };
 		DE7612841D71676F0093B345 /* traintracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = traintracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7612871D71676F0093B345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE76128A1D71676F0093B345 /* traintracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = traintracker.xcdatamodel; sourceTree = "<group>"; };
@@ -146,6 +150,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B7539201D718A87009EFCE2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1B7539251D718B07009EFCE2 /* stationlist.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		DE76127B1D71676F0093B345 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +183,7 @@
 		DE7612861D71676F0093B345 /* traintracker */ = {
 			isa = PBXGroup;
 			children = (
+				1B7539201D718A87009EFCE2 /* Resources */,
 				DE7612BA1D7169B90093B345 /* Operations */,
 				DE7612871D71676F0093B345 /* AppDelegate.swift */,
 				DE76128C1D71676F0093B345 /* MasterViewController.swift */,
@@ -346,6 +359,7 @@
 			files = (
 				DE7612971D71676F0093B345 /* LaunchScreen.storyboard in Resources */,
 				DE7612941D71676F0093B345 /* Assets.xcassets in Resources */,
+				1B7539261D718B07009EFCE2 /* stationlist.json in Resources */,
 				DE7612921D71676F0093B345 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7539271D718B07009EFCE2 /* stationlist.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7539281D718B07009EFCE2 /* stationlist.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
