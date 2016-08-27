@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import CoreLocation
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate, CLLocationManagerDelegate {
@@ -17,21 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var operationQueue: OperationQueue
     var locationManager: CLLocationManager?
 
-    
     override init() {
         operationQueue = OperationQueue()
     }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-//        let navigationController = self.window!.rootViewController as! UINavigationController
-//        let masterNavigationController = navigationController
-//        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
-//        splitViewController.delegate = self
-//
-//        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
-//        let controller = masterNavigationController.topViewController as! MasterViewController
+        
+        GMSServices.provideAPIKey("AIzaSyD9LwZSfMrwgo4qYP1CsdXA0ZttMaiow_k")
         
         self.locationManager = CLLocationManager()
         self.locationManager!.delegate = self;

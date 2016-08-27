@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13E3966683C35A25DD70BE35 /* libPods-traintracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6942D96AEBD470A1A56FBC2F /* libPods-traintracker.a */; };
 		1B7539261D718B07009EFCE2 /* stationlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539251D718B07009EFCE2 /* stationlist.json */; };
 		1B7539271D718B07009EFCE2 /* stationlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539251D718B07009EFCE2 /* stationlist.json */; };
 		1B7539281D718B07009EFCE2 /* stationlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539251D718B07009EFCE2 /* stationlist.json */; };
+		1B75392A1D71A2A1009EFCE2 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539291D71A2A1009EFCE2 /* FontAwesome.otf */; };
 		DE7612881D71676F0093B345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612871D71676F0093B345 /* AppDelegate.swift */; };
 		DE76128B1D71676F0093B345 /* traintracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE7612891D71676F0093B345 /* traintracker.xcdatamodeld */; };
 		DE76128D1D71676F0093B345 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76128C1D71676F0093B345 /* MasterViewController.swift */; };
@@ -73,6 +75,10 @@
 
 /* Begin PBXFileReference section */
 		1B7539251D718B07009EFCE2 /* stationlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = stationlist.json; path = Resources/stationlist.json; sourceTree = "<group>"; };
+		1B7539291D71A2A1009EFCE2 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = Resources/FontAwesome.otf; sourceTree = "<group>"; };
+		4FAEB8D08A02059EE4A7A5FC /* Pods-traintracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traintracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-traintracker/Pods-traintracker.debug.xcconfig"; sourceTree = "<group>"; };
+		6942D96AEBD470A1A56FBC2F /* libPods-traintracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traintracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CE6E2FECA6F74653CC779D /* Pods-traintracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traintracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-traintracker/Pods-traintracker.release.xcconfig"; sourceTree = "<group>"; };
 		DE7612841D71676F0093B345 /* traintracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = traintracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7612871D71676F0093B345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE76128A1D71676F0093B345 /* traintracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = traintracker.xcdatamodel; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			files = (
 				DE7612FE1D716DE00093B345 /* QuartzCore.framework in Frameworks */,
 				DE7612FC1D716DD90093B345 /* CoreLocation.framework in Frameworks */,
+				13E3966683C35A25DD70BE35 /* libPods-traintracker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,9 +160,27 @@
 		1B7539201D718A87009EFCE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1B7539291D71A2A1009EFCE2 /* FontAwesome.otf */,
 				1B7539251D718B07009EFCE2 /* stationlist.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		2D7B8154579C75795C711F85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4FAEB8D08A02059EE4A7A5FC /* Pods-traintracker.debug.xcconfig */,
+				B5CE6E2FECA6F74653CC779D /* Pods-traintracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF3FCE1096B333CAF4E5D5EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6942D96AEBD470A1A56FBC2F /* libPods-traintracker.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DE76127B1D71676F0093B345 = {
@@ -167,6 +192,8 @@
 				DE7612A01D7167700093B345 /* traintrackerTests */,
 				DE7612AB1D7167700093B345 /* traintrackerUITests */,
 				DE7612851D71676F0093B345 /* Products */,
+				2D7B8154579C75795C711F85 /* Pods */,
+				BF3FCE1096B333CAF4E5D5EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE7612B11D7167700093B345 /* Build configuration list for PBXNativeTarget "traintracker" */;
 			buildPhases = (
+				E5BEB0328B0AB989ED5167BD /* [CP] Check Pods Manifest.lock */,
 				DE7612801D71676F0093B345 /* Sources */,
 				DE7612811D71676F0093B345 /* Frameworks */,
 				DE7612821D71676F0093B345 /* Resources */,
+				45D303A6F994466290D0F6AE /* [CP] Embed Pods Frameworks */,
+				C3AC66BB47ED729C35A89B7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7612971D71676F0093B345 /* LaunchScreen.storyboard in Resources */,
+				1B75392A1D71A2A1009EFCE2 /* FontAwesome.otf in Resources */,
 				DE7612941D71676F0093B345 /* Assets.xcassets in Resources */,
 				1B7539261D718B07009EFCE2 /* stationlist.json in Resources */,
 				DE7612921D71676F0093B345 /* Main.storyboard in Resources */,
@@ -381,6 +412,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45D303A6F994466290D0F6AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-traintracker/Pods-traintracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3AC66BB47ED729C35A89B7D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-traintracker/Pods-traintracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5BEB0328B0AB989ED5167BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE7612801D71676F0093B345 /* Sources */ = {
@@ -561,6 +640,7 @@
 		};
 		DE7612B21D7167700093B345 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FAEB8D08A02059EE4A7A5FC /* Pods-traintracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = traintracker/Info.plist;
@@ -573,6 +653,7 @@
 		};
 		DE7612B31D7167700093B345 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5CE6E2FECA6F74653CC779D /* Pods-traintracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = traintracker/Info.plist;
