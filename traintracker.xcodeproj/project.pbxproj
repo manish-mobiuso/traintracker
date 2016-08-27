@@ -18,10 +18,13 @@
 		1B7539301D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75392F1D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift */; };
 		1B7539311D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75392F1D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift */; };
 		1B7539321D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75392F1D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift */; };
-		DE4AF6F31D71B5A400A148C9 /* station.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4AF6F21D71B5A400A148C9 /* station.png */; };
 		1B7539341D71B219009EFCE2 /* upTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539331D71B219009EFCE2 /* upTrains.json */; };
 		1B7539351D71B219009EFCE2 /* upTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539331D71B219009EFCE2 /* upTrains.json */; };
 		1B7539361D71B219009EFCE2 /* upTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539331D71B219009EFCE2 /* upTrains.json */; };
+		DE4AF6F31D71B5A400A148C9 /* station.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4AF6F21D71B5A400A148C9 /* station.png */; };
+		DE4AF6F51D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */; };
+		DE4AF6F61D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */; };
+		DE4AF6F71D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */; };
 		DE7612881D71676F0093B345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612871D71676F0093B345 /* AppDelegate.swift */; };
 		DE76128B1D71676F0093B345 /* traintracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE7612891D71676F0093B345 /* traintracker.xcdatamodeld */; };
 		DE76128D1D71676F0093B345 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE76128C1D71676F0093B345 /* MasterViewController.swift */; };
@@ -93,6 +96,7 @@
 		6942D96AEBD470A1A56FBC2F /* libPods-traintracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traintracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CE6E2FECA6F74653CC779D /* Pods-traintracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traintracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-traintracker/Pods-traintracker.release.xcconfig"; sourceTree = "<group>"; };
 		DE4AF6F21D71B5A400A148C9 /* station.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = station.png; path = Resources/station.png; sourceTree = "<group>"; };
+		DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTrainScheduleViewController.swift; sourceTree = "<group>"; };
 		DE7612841D71676F0093B345 /* traintracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = traintracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7612871D71676F0093B345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE76128A1D71676F0093B345 /* traintracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = traintracker.xcdatamodel; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 				DE7612951D71676F0093B345 /* LaunchScreen.storyboard */,
 				DE7612981D71676F0093B345 /* Info.plist */,
 				DE7612891D71676F0093B345 /* traintracker.xcdatamodeld */,
+				DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */,
 			);
 			path = traintracker;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				DE7612EA1D7169B90093B345 /* NSLock+Operations.swift in Sources */,
 				DE7612E61D7169B90093B345 /* LocationOperation.swift in Sources */,
 				DE7612F91D7169B90093B345 /* URLSessionTaskOperation.swift in Sources */,
+				DE4AF6F51D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */,
 				DE7612E01D7169B90093B345 /* DelayOperation.swift in Sources */,
 				DE7612DB1D7169B90093B345 /* BlockObserver.swift in Sources */,
 				DE7612DE1D7169B90093B345 /* CKContainer+Operations.swift in Sources */,
@@ -534,6 +540,7 @@
 			files = (
 				1B75392D1D71AE60009EFCE2 /* AllTrainScheduleViewController.swift in Sources */,
 				1B7539311D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift in Sources */,
+				DE4AF6F61D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */,
 				DE7612A21D7167700093B345 /* traintrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +551,7 @@
 			files = (
 				1B75392E1D71AE60009EFCE2 /* AllTrainScheduleViewController.swift in Sources */,
 				1B7539321D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift in Sources */,
+				DE4AF6F71D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */,
 				DE7612AD1D7167700093B345 /* traintrackerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

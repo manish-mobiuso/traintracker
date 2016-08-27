@@ -145,27 +145,26 @@ class AllTrainScheduleViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "AllTrainTimeTable" {
-//            if let indexPath = self.tableView.indexPathForSelectedRow {
-//                if (indexPath == 1) {
-//                    let object = self.trainsTimeTable[indexPath.row]
-//                    let controller = segue.destinationViewController as! DetailViewController
-//                    controller.detailItem = object
-//                    
-//                    controller.navigationItem.leftItemsSupplementBackButton = true
-//                }
-//            }
-        } else if segue.identifier == "upcomeTrainsMap" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                if (indexPath.section == 0) {
-                    let controller = segue.destinationViewController as! UpcomingTrainsMapViewController
-                    controller.selectedStation = selectedStation
-                    
-                    controller.navigationItem.leftItemsSupplementBackButton = true
-                }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.section == 0) {
+
+            if let context = UIApplication.sharedApplication().keyWindow?.rootViewController {
+                let vc: UpcomingTrainsMapViewController = context.storyboard?.instantiateViewControllerWithIdentifier("UpcomingTrainsMapViewController") as! UpcomingTrainsMapViewController
+                vc.selectedStation = selectedStation
+                vc.navigationItem.leftItemsSupplementBackButton = true
+                
+                (context as? UINavigationController)?.pushViewController(vc, animated: true)
+            }
+        } else {
+            if let context = UIApplication.sharedApplication().keyWindow?.rootViewController {
+                let vc: SingleTrainScheduleViewController = context.storyboard?.instantiateViewControllerWithIdentifier("SingleTrainScheduleViewController") as! SingleTrainScheduleViewController
+                vc.navigationItem.leftItemsSupplementBackButton = true
+                
+                (context as? UINavigationController)?.pushViewController(vc, animated: true)
             }
         }
+        
     }
     
     func configureCell(cell: UITableViewCell, withObject object: NSDictionary) {
@@ -183,7 +182,7 @@ class AllTrainScheduleViewController: UITableViewController {
         }
         
         cell.textLabel!.text = "\(object[stationName!] as! String!)"
-        // cell.detailTextLabel!.text = "\(startLocation!) - \(endLocation!)"
+        cell.detailTextLabel!.text = "\(startLocation!) - \(endLocation!)"
     }
 
 
