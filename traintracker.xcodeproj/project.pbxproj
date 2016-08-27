@@ -16,6 +16,37 @@
 		DE7612971D71676F0093B345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7612951D71676F0093B345 /* LaunchScreen.storyboard */; };
 		DE7612A21D7167700093B345 /* traintrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612A11D7167700093B345 /* traintrackerTests.swift */; };
 		DE7612AD1D7167700093B345 /* traintrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612AC1D7167700093B345 /* traintrackerUITests.swift */; };
+		DE7612DB1D7169B90093B345 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612BB1D7169B90093B345 /* BlockObserver.swift */; };
+		DE7612DC1D7169B90093B345 /* BlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612BC1D7169B90093B345 /* BlockOperation.swift */; };
+		DE7612DD1D7169B90093B345 /* CalendarCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612BD1D7169B90093B345 /* CalendarCondition.swift */; };
+		DE7612DE1D7169B90093B345 /* CKContainer+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612BE1D7169B90093B345 /* CKContainer+Operations.swift */; };
+		DE7612DF1D7169B90093B345 /* CloudCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612BF1D7169B90093B345 /* CloudCondition.swift */; };
+		DE7612E01D7169B90093B345 /* DelayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C01D7169B90093B345 /* DelayOperation.swift */; };
+		DE7612E11D7169B90093B345 /* Dictionary+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C11D7169B90093B345 /* Dictionary+Operations.swift */; };
+		DE7612E21D7169B90093B345 /* ExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C21D7169B90093B345 /* ExclusivityController.swift */; };
+		DE7612E31D7169B90093B345 /* GroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C31D7169B90093B345 /* GroupOperation.swift */; };
+		DE7612E41D7169B90093B345 /* HealthCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C41D7169B90093B345 /* HealthCondition.swift */; };
+		DE7612E51D7169B90093B345 /* LocationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C51D7169B90093B345 /* LocationCondition.swift */; };
+		DE7612E61D7169B90093B345 /* LocationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C61D7169B90093B345 /* LocationOperation.swift */; };
+		DE7612E71D7169B90093B345 /* MutuallyExclusive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C71D7169B90093B345 /* MutuallyExclusive.swift */; };
+		DE7612E81D7169B90093B345 /* NegatedCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C81D7169B90093B345 /* NegatedCondition.swift */; };
+		DE7612E91D7169B90093B345 /* NoCancelledDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612C91D7169B90093B345 /* NoCancelledDependencies.swift */; };
+		DE7612EA1D7169B90093B345 /* NSLock+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612CA1D7169B90093B345 /* NSLock+Operations.swift */; };
+		DE7612EB1D7169B90093B345 /* NSOperation+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612CB1D7169B90093B345 /* NSOperation+Operations.swift */; };
+		DE7612EC1D7169B90093B345 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612CC1D7169B90093B345 /* Operation.swift */; };
+		DE7612ED1D7169B90093B345 /* OperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612CD1D7169B90093B345 /* OperationCondition.swift */; };
+		DE7612EE1D7169B90093B345 /* OperationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612CE1D7169B90093B345 /* OperationErrors.swift */; };
+		DE7612EF1D7169B90093B345 /* OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612CF1D7169B90093B345 /* OperationObserver.swift */; };
+		DE7612F11D7169B90093B345 /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D11D7169B90093B345 /* OperationQueue.swift */; };
+		DE7612F21D7169B90093B345 /* PassbookCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D21D7169B90093B345 /* PassbookCondition.swift */; };
+		DE7612F31D7169B90093B345 /* PhotosCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D31D7169B90093B345 /* PhotosCondition.swift */; };
+		DE7612F41D7169B90093B345 /* ReachabilityCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D41D7169B90093B345 /* ReachabilityCondition.swift */; };
+		DE7612F51D7169B90093B345 /* RemoteNotificationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D51D7169B90093B345 /* RemoteNotificationCondition.swift */; };
+		DE7612F61D7169B90093B345 /* SilentCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D61D7169B90093B345 /* SilentCondition.swift */; };
+		DE7612F71D7169B90093B345 /* TimeoutObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D71D7169B90093B345 /* TimeoutObserver.swift */; };
+		DE7612F81D7169B90093B345 /* UIUserNotifications+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D81D7169B90093B345 /* UIUserNotifications+Operations.swift */; };
+		DE7612F91D7169B90093B345 /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612D91D7169B90093B345 /* URLSessionTaskOperation.swift */; };
+		DE7612FA1D7169B90093B345 /* UserNotificationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7612DA1D7169B90093B345 /* UserNotificationCondition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +82,37 @@
 		DE7612A81D7167700093B345 /* traintrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = traintrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7612AC1D7167700093B345 /* traintrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = traintrackerUITests.swift; sourceTree = "<group>"; };
 		DE7612AE1D7167700093B345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE7612BB1D7169B90093B345 /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
+		DE7612BC1D7169B90093B345 /* BlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockOperation.swift; sourceTree = "<group>"; };
+		DE7612BD1D7169B90093B345 /* CalendarCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCondition.swift; sourceTree = "<group>"; };
+		DE7612BE1D7169B90093B345 /* CKContainer+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CKContainer+Operations.swift"; sourceTree = "<group>"; };
+		DE7612BF1D7169B90093B345 /* CloudCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudCondition.swift; sourceTree = "<group>"; };
+		DE7612C01D7169B90093B345 /* DelayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayOperation.swift; sourceTree = "<group>"; };
+		DE7612C11D7169B90093B345 /* Dictionary+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Operations.swift"; sourceTree = "<group>"; };
+		DE7612C21D7169B90093B345 /* ExclusivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusivityController.swift; sourceTree = "<group>"; };
+		DE7612C31D7169B90093B345 /* GroupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOperation.swift; sourceTree = "<group>"; };
+		DE7612C41D7169B90093B345 /* HealthCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthCondition.swift; sourceTree = "<group>"; };
+		DE7612C51D7169B90093B345 /* LocationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCondition.swift; sourceTree = "<group>"; };
+		DE7612C61D7169B90093B345 /* LocationOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationOperation.swift; sourceTree = "<group>"; };
+		DE7612C71D7169B90093B345 /* MutuallyExclusive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutuallyExclusive.swift; sourceTree = "<group>"; };
+		DE7612C81D7169B90093B345 /* NegatedCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NegatedCondition.swift; sourceTree = "<group>"; };
+		DE7612C91D7169B90093B345 /* NoCancelledDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCancelledDependencies.swift; sourceTree = "<group>"; };
+		DE7612CA1D7169B90093B345 /* NSLock+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLock+Operations.swift"; sourceTree = "<group>"; };
+		DE7612CB1D7169B90093B345 /* NSOperation+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSOperation+Operations.swift"; sourceTree = "<group>"; };
+		DE7612CC1D7169B90093B345 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		DE7612CD1D7169B90093B345 /* OperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationCondition.swift; sourceTree = "<group>"; };
+		DE7612CE1D7169B90093B345 /* OperationErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationErrors.swift; sourceTree = "<group>"; };
+		DE7612CF1D7169B90093B345 /* OperationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationObserver.swift; sourceTree = "<group>"; };
+		DE7612D11D7169B90093B345 /* OperationQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		DE7612D21D7169B90093B345 /* PassbookCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassbookCondition.swift; sourceTree = "<group>"; };
+		DE7612D31D7169B90093B345 /* PhotosCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCondition.swift; sourceTree = "<group>"; };
+		DE7612D41D7169B90093B345 /* ReachabilityCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityCondition.swift; sourceTree = "<group>"; };
+		DE7612D51D7169B90093B345 /* RemoteNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationCondition.swift; sourceTree = "<group>"; };
+		DE7612D61D7169B90093B345 /* SilentCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilentCondition.swift; sourceTree = "<group>"; };
+		DE7612D71D7169B90093B345 /* TimeoutObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeoutObserver.swift; sourceTree = "<group>"; };
+		DE7612D81D7169B90093B345 /* UIUserNotifications+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIUserNotifications+Operations.swift"; sourceTree = "<group>"; };
+		DE7612D91D7169B90093B345 /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
+		DE7612DA1D7169B90093B345 /* UserNotificationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCondition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +163,7 @@
 		DE7612861D71676F0093B345 /* traintracker */ = {
 			isa = PBXGroup;
 			children = (
+				DE7612BA1D7169B90093B345 /* Operations */,
 				DE7612871D71676F0093B345 /* AppDelegate.swift */,
 				DE76128C1D71676F0093B345 /* MasterViewController.swift */,
 				DE76128E1D71676F0093B345 /* DetailViewController.swift */,
@@ -129,6 +192,44 @@
 				DE7612AE1D7167700093B345 /* Info.plist */,
 			);
 			path = traintrackerUITests;
+			sourceTree = "<group>";
+		};
+		DE7612BA1D7169B90093B345 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				DE7612BB1D7169B90093B345 /* BlockObserver.swift */,
+				DE7612BC1D7169B90093B345 /* BlockOperation.swift */,
+				DE7612BD1D7169B90093B345 /* CalendarCondition.swift */,
+				DE7612BE1D7169B90093B345 /* CKContainer+Operations.swift */,
+				DE7612BF1D7169B90093B345 /* CloudCondition.swift */,
+				DE7612C01D7169B90093B345 /* DelayOperation.swift */,
+				DE7612C11D7169B90093B345 /* Dictionary+Operations.swift */,
+				DE7612C21D7169B90093B345 /* ExclusivityController.swift */,
+				DE7612C31D7169B90093B345 /* GroupOperation.swift */,
+				DE7612C41D7169B90093B345 /* HealthCondition.swift */,
+				DE7612C51D7169B90093B345 /* LocationCondition.swift */,
+				DE7612C61D7169B90093B345 /* LocationOperation.swift */,
+				DE7612C71D7169B90093B345 /* MutuallyExclusive.swift */,
+				DE7612C81D7169B90093B345 /* NegatedCondition.swift */,
+				DE7612C91D7169B90093B345 /* NoCancelledDependencies.swift */,
+				DE7612CA1D7169B90093B345 /* NSLock+Operations.swift */,
+				DE7612CB1D7169B90093B345 /* NSOperation+Operations.swift */,
+				DE7612CC1D7169B90093B345 /* Operation.swift */,
+				DE7612CD1D7169B90093B345 /* OperationCondition.swift */,
+				DE7612CE1D7169B90093B345 /* OperationErrors.swift */,
+				DE7612CF1D7169B90093B345 /* OperationObserver.swift */,
+				DE7612D11D7169B90093B345 /* OperationQueue.swift */,
+				DE7612D21D7169B90093B345 /* PassbookCondition.swift */,
+				DE7612D31D7169B90093B345 /* PhotosCondition.swift */,
+				DE7612D41D7169B90093B345 /* ReachabilityCondition.swift */,
+				DE7612D51D7169B90093B345 /* RemoteNotificationCondition.swift */,
+				DE7612D61D7169B90093B345 /* SilentCondition.swift */,
+				DE7612D71D7169B90093B345 /* TimeoutObserver.swift */,
+				DE7612D81D7169B90093B345 /* UIUserNotifications+Operations.swift */,
+				DE7612D91D7169B90093B345 /* URLSessionTaskOperation.swift */,
+				DE7612DA1D7169B90093B345 /* UserNotificationCondition.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +363,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7612E91D7169B90093B345 /* NoCancelledDependencies.swift in Sources */,
+				DE7612DF1D7169B90093B345 /* CloudCondition.swift in Sources */,
 				DE7612881D71676F0093B345 /* AppDelegate.swift in Sources */,
+				DE7612F41D7169B90093B345 /* ReachabilityCondition.swift in Sources */,
+				DE7612F71D7169B90093B345 /* TimeoutObserver.swift in Sources */,
 				DE76128B1D71676F0093B345 /* traintracker.xcdatamodeld in Sources */,
+				DE7612F61D7169B90093B345 /* SilentCondition.swift in Sources */,
 				DE76128D1D71676F0093B345 /* MasterViewController.swift in Sources */,
+				DE7612DC1D7169B90093B345 /* BlockOperation.swift in Sources */,
+				DE7612E41D7169B90093B345 /* HealthCondition.swift in Sources */,
+				DE7612E81D7169B90093B345 /* NegatedCondition.swift in Sources */,
+				DE7612E31D7169B90093B345 /* GroupOperation.swift in Sources */,
+				DE7612EF1D7169B90093B345 /* OperationObserver.swift in Sources */,
+				DE7612DD1D7169B90093B345 /* CalendarCondition.swift in Sources */,
+				DE7612E71D7169B90093B345 /* MutuallyExclusive.swift in Sources */,
+				DE7612F51D7169B90093B345 /* RemoteNotificationCondition.swift in Sources */,
+				DE7612EC1D7169B90093B345 /* Operation.swift in Sources */,
+				DE7612E11D7169B90093B345 /* Dictionary+Operations.swift in Sources */,
+				DE7612FA1D7169B90093B345 /* UserNotificationCondition.swift in Sources */,
+				DE7612E21D7169B90093B345 /* ExclusivityController.swift in Sources */,
+				DE7612F11D7169B90093B345 /* OperationQueue.swift in Sources */,
 				DE76128F1D71676F0093B345 /* DetailViewController.swift in Sources */,
+				DE7612F31D7169B90093B345 /* PhotosCondition.swift in Sources */,
+				DE7612E51D7169B90093B345 /* LocationCondition.swift in Sources */,
+				DE7612EB1D7169B90093B345 /* NSOperation+Operations.swift in Sources */,
+				DE7612EA1D7169B90093B345 /* NSLock+Operations.swift in Sources */,
+				DE7612E61D7169B90093B345 /* LocationOperation.swift in Sources */,
+				DE7612F91D7169B90093B345 /* URLSessionTaskOperation.swift in Sources */,
+				DE7612E01D7169B90093B345 /* DelayOperation.swift in Sources */,
+				DE7612DB1D7169B90093B345 /* BlockObserver.swift in Sources */,
+				DE7612DE1D7169B90093B345 /* CKContainer+Operations.swift in Sources */,
+				DE7612EE1D7169B90093B345 /* OperationErrors.swift in Sources */,
+				DE7612F81D7169B90093B345 /* UIUserNotifications+Operations.swift in Sources */,
+				DE7612ED1D7169B90093B345 /* OperationCondition.swift in Sources */,
+				DE7612F21D7169B90093B345 /* PassbookCondition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
