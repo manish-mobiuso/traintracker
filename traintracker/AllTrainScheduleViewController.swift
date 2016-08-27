@@ -11,7 +11,10 @@ import UIKit
 class AllTrainScheduleViewController: UITableViewController {
     
     var trainsTimeTable : [NSDictionary] = []
-    var selectedTrain : NSDictionary!
+    var selectedStation : NSDictionary!
+    var stationName: String?
+    
+    var stationsArray: [String] = ["Khopoli", "Lowjee", "Dolavi", "Kelavi", "Palasdari", "Karjat", "Bhivpuri", "Neral", "Shelu", "Vangani", "Badlapur", "Ambernath", "Ulhasnagar", "Vithalwadi", "Kalyan", "Thakurli", "Dombivili", "Kopar", "Diva", "Mumbra", "Kalwa", "Thane", "Mulund", "Nahur", "Bhandup", "Kanjurmarg", "Vikhroli", "Ghatkopar", "Vidhyavihar", "Kurla", "Sion", "Matunga", "Dadar", "Parel", "Currey Road", "Chinchpokli", "Byculla", "Sandhurst Road", "Masjid", "Mumbai CST"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +34,46 @@ class AllTrainScheduleViewController: UITableViewController {
             print("Invalid filename/path.")
         }
         
-        NSLog("test ")
+        stationName = selectedStation["Station"] as! String
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        trainsTimeTable = trainsTimeTable.filter( { $0[stationName!] != nil } )
+        
+        trainsTimeTable = trainsTimeTable.sort({ (left, right) -> Bool in
+            var lefttime = left[stationName!] as! String
+            var righttime = right[stationName!] as! String
+            
+            let leftday: String = lefttime.substringFromIndex(lefttime.startIndex.advancedBy(6))
+            let rightday: String = righttime.substringFromIndex(righttime.startIndex.advancedBy(6))
+            
+            lefttime = lefttime.stringByReplacingOccurrencesOfString("12", withString: "00")
+            righttime = righttime.stringByReplacingOccurrencesOfString("12", withString: "00")
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+            return (leftday == rightday) ? (lefttime < righttime) : (leftday < rightday)
+        })
+        
+        let time: String = getFormattedDate(NSDate(), format: "hh:mm a").lowercaseString
+        
+        trainsTimeTable = trainsTimeTable.filter({ (element) -> Bool in
+            var lefttime = time
+            var righttime = element[stationName!] as! String
+            
+            let leftday: String = lefttime.substringFromIndex(lefttime.startIndex.advancedBy(6))
+            let rightday: String = righttime.substringFromIndex(righttime.startIndex.advancedBy(6))
+            
+            lefttime = lefttime.stringByReplacingOccurrencesOfString("12", withString: "00")
+            righttime = righttime.stringByReplacingOccurrencesOfString("12", withString: "00")
+            
+            return (leftday == rightday) ? (lefttime < righttime) : (leftday < rightday)
+        })
     }
-
+    
+    func getFormattedDate(date:NSDate, format:String) -> String {
+        let dateFormatter:NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = format
+        let todayString:String = dateFormatter.stringFromDate(date)
+        return todayString
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -126,8 +160,21 @@ class AllTrainScheduleViewController: UITableViewController {
     }
     
     func configureCell(cell: UITableViewCell, withObject object: NSDictionary) {
-//        cell.textLabel!.text = object .allKeys .first as! String
-//        cell.detailTextLabel!.text = "second level" //[object .allValues] .first as NSString
+        var startLocation: String?
+        var endLocation: String?
+        
+        for station in stationsArray {
+            if (object[station] != nil) {
+                if (startLocation == nil) {
+                    startLocation = station
+                }
+                
+                endLocation = station
+            }
+        }
+        
+        cell.textLabel!.text = "\(object[stationName!] as! String!)"
+        // cell.detailTextLabel!.text = "\(startLocation!) - \(endLocation!)"
     }
 
 
