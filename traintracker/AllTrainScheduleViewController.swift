@@ -10,7 +10,7 @@ import UIKit
 
 class AllTrainScheduleViewController: UITableViewController {
     
-    var trainsTimeTable : [NSDictionary] = []
+    var trainsTimeTable : [Dictionary<String, String>] = []
     var selectedStation : NSDictionary!
     var stationName: String?
     
@@ -23,8 +23,8 @@ class AllTrainScheduleViewController: UITableViewController {
         if let path = NSBundle.mainBundle().pathForResource("upTrains", ofType: "json") {
             do {
                 let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
-                let stationlist: [NSDictionary] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
-                for station: NSDictionary in stationlist {
+                let stationlist: [Dictionary<String, String>] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [Dictionary<String, String>]
+                for station in stationlist {
                     trainsTimeTable.append(station)
                 }
             } catch let error as NSError {
@@ -39,8 +39,8 @@ class AllTrainScheduleViewController: UITableViewController {
         trainsTimeTable = trainsTimeTable.filter( { $0[stationName!] != nil } )
         
         trainsTimeTable = trainsTimeTable.sort({ (left, right) -> Bool in
-            var lefttime = left[stationName!] as! String
-            var righttime = right[stationName!] as! String
+            var lefttime = left[stationName!]!
+            var righttime = right[stationName!]!
             
             let leftday: String = lefttime.substringFromIndex(lefttime.startIndex.advancedBy(6))
             let rightday: String = righttime.substringFromIndex(righttime.startIndex.advancedBy(6))
@@ -55,7 +55,7 @@ class AllTrainScheduleViewController: UITableViewController {
         
         trainsTimeTable = trainsTimeTable.filter({ (element) -> Bool in
             var lefttime = time
-            var righttime = element[stationName!] as! String
+            var righttime = element[stationName!]!
             
             let leftday: String = lefttime.substringFromIndex(lefttime.startIndex.advancedBy(6))
             let rightday: String = righttime.substringFromIndex(righttime.startIndex.advancedBy(6))
@@ -160,7 +160,7 @@ class AllTrainScheduleViewController: UITableViewController {
             if let context = UIApplication.sharedApplication().keyWindow?.rootViewController {
                 let vc: SingleTrainScheduleViewController = context.storyboard?.instantiateViewControllerWithIdentifier("SingleTrainScheduleViewController") as! SingleTrainScheduleViewController
                 vc.navigationItem.leftItemsSupplementBackButton = true
-                
+                vc.traindata = trainsTimeTable[indexPath.row]
                 (context as? UINavigationController)?.pushViewController(vc, animated: true)
             }
         }
