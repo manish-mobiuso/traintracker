@@ -9,10 +9,30 @@
 import UIKit
 
 class AllTrainScheduleViewController: UITableViewController {
+    
+    var trainsTimeTable : [NSDictionary] = []
+    var selectedTrain : NSDictionary!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        if let path = NSBundle.mainBundle().pathForResource("upTrains", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let stationlist: [NSDictionary] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
+                for station: NSDictionary in stationlist {
+                    trainsTimeTable.append(station)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        
+        NSLog("test ")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,24 +48,29 @@ class AllTrainScheduleViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if (section == 0) {
+            return 1
+        } else {
+            return trainsTimeTable.count
+        }
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("StationCellIdentifier", forIndexPath: indexPath)
+        
+        if (indexPath.section == 0) {
+            cell.textLabel?.text = "View upcoming trains on Map"
+            cell.accessoryView = nil
+        } else {
+            let object = self.trainsTimeTable[indexPath.row]
+            self.configureCell(cell, withObject: object)
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +107,28 @@ class AllTrainScheduleViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AllTrainTimeTable" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                if (indexPath == 1) {
+                    let object = self.trainsTimeTable[indexPath.row]
+                    let controller = segue.destinationViewController as! DetailViewController
+                    controller.detailItem = object
+                    
+                    controller.navigationItem.leftItemsSupplementBackButton = true
+                }
+            }
+        }
     }
-    */
+    
+    func configureCell(cell: UITableViewCell, withObject object: NSDictionary) {
+//        cell.textLabel!.text = object .allKeys .first as! String
+//        cell.detailTextLabel!.text = "second level" //[object .allValues] .first as NSString
+    }
+
 
 }

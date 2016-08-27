@@ -58,12 +58,12 @@ class DetailViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showTimeTable" {
+        if segue.identifier == "alltrainsTimeTable" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = self.stations[indexPath.row]
-                let controller = segue.destinationViewController as! DetailViewController
-                controller.detailItem = object
-                //                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                let controller = segue.destinationViewController as! AllTrainScheduleViewController
+                controller.selectedTrain = object
+
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
