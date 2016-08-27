@@ -47,7 +47,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="eLd-pV-inU" kind="push" id="DtC-YS-wek"/>
+                                    <segue destination="eLd-pV-inU" kind="push" identifier="showDetail" id="DtC-YS-wek"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,7 +61,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869" y="-630"/>
+            <point key="canvasLocation" x="925" y="-615"/>
         </scene>
         <!--Boarding Station-->
         <scene sceneID="Bgc-WJ-NzN">
@@ -89,7 +89,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9aK-tX-Uoj" kind="push" id="2LV-ET-2fa"/>
+                                    <segue destination="9aK-tX-Uoj" kind="push" identifier="alltrainsTimeTable" id="2LV-ET-2fa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="3Do-UC-hgA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StationCellIdentifier" id="3Do-UC-hgA">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Do-UC-hgA" id="75g-U8-Xhp">
