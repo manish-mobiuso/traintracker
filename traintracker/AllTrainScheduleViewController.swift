@@ -147,11 +147,20 @@ class AllTrainScheduleViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AllTrainTimeTable" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//                if (indexPath == 1) {
+//                    let object = self.trainsTimeTable[indexPath.row]
+//                    let controller = segue.destinationViewController as! DetailViewController
+//                    controller.detailItem = object
+//                    
+//                    controller.navigationItem.leftItemsSupplementBackButton = true
+//                }
+//            }
+        } else if segue.identifier == "upcomeTrainsMap" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                if (indexPath == 1) {
-                    let object = self.trainsTimeTable[indexPath.row]
-                    let controller = segue.destinationViewController as! DetailViewController
-                    controller.detailItem = object
+                if (indexPath.section == 0) {
+                    let controller = segue.destinationViewController as! UpcomingTrainsMapViewController
+                    controller.selectedStation = selectedStation
                     
                     controller.navigationItem.leftItemsSupplementBackButton = true
                 }

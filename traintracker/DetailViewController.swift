@@ -62,10 +62,12 @@ class DetailViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = self.stations[indexPath.row]
                 let controller = segue.destinationViewController as! AllTrainScheduleViewController
-                controller.selectedTrain = object
+                controller.selectedStation = object
 
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
+        } else {
+        
         }
     }
     

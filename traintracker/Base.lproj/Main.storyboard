@@ -120,6 +120,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="LDG-1T-Pan" kind="push" identifier="upcomeTrainsMap" id="mIy-5g-9Kt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
