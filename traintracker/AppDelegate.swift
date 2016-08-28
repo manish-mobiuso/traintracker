@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         } else {
             // Fallback on earlier versions
         }
+        
+        appConfiguration()
 
         return true
     }
@@ -74,6 +76,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         return false
     }
+    
+    // MARK: - App UI Style configuration
+    func appConfiguration () {
+        
+        // navigation bar and its item related appearance configuration
+        
+        //blue color: 35, 98, ec
+        
+        let blueColor = UIColor.init(red: 0x35/0xFF, green: 0x98/0xFF, blue: 0xdc/0xFF, alpha: 0.3) as UIColor
+        let lightGrayColor = UIColor.init(red: 0xEC/0xFF, green: 0xF0/0xFF, blue: 0xdc/0xF1, alpha: 1) as UIColor
+
+        let lightBlackColor = UIColor.init(red: 0x34/0xFF, green: 0x49/0xFF, blue: 0x5E/0xF1, alpha: 0.5) as UIColor
+        
+        UINavigationBar.appearance().backgroundColor = blueColor //UIColor.lightTextColor()
+        UINavigationBar.appearance().barTintColor = blueColor //UIColor.lightTextColor()
+        UINavigationBar.appearance().tintColor = lightGrayColor //UIColor.darkGrayColor()
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:lightGrayColor, NSFontAttributeName:UIFont.systemFontOfSize(18)]
+        
+        
+        // hide standard back icon and text, show our cutom back image
+//        [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"back-x24.png"]];
+//        [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back-x24.png"]];
+        
+        // set global tableview separator color
+        UITableView.appearance().separatorColor = lightBlackColor;
+
+        UITableViewCell.appearance().textLabel?.font = UIFont.systemFontOfSize(16)
+        UITableViewCell.appearance().textLabel?.textColor = UIColor.blueColor()
+        
+        UITableViewCell.appearance().detailTextLabel?.font = UIFont.systemFontOfSize(14)
+        UITableViewCell.appearance().detailTextLabel?.textColor = UIColor.orangeColor()
+        
+        // set global cell selection
+    
+//        UIView *selectionBgColorView = [[UIView alloc] init];
+//        [selectionBgColorView setBackgroundColor:[UIColor ucDarkGrayBlue8PercentColor]];
+//        [[UITableViewCell appearance] setSelectedBackgroundView:selectionBgColorView];
+        
+        
+        // set activity indicator appearance
+//        [[UIActivityIndicatorView appearance] setColor:[UIColor ucSlateGray]];
+//        [[UIActivityIndicatorView appearance] setFrame:CGRectMake(0.0f, 0.0f, 27.0f, 27.0f)];
+    }
+    
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {

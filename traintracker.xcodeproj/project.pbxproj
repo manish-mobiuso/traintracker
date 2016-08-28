@@ -21,6 +21,9 @@
 		1B7539341D71B219009EFCE2 /* upTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539331D71B219009EFCE2 /* upTrains.json */; };
 		1B7539351D71B219009EFCE2 /* upTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539331D71B219009EFCE2 /* upTrains.json */; };
 		1B7539361D71B219009EFCE2 /* upTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539331D71B219009EFCE2 /* upTrains.json */; };
+		1B7539381D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */; };
+		1B7539391D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */; };
+		1B75393A1D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */; };
 		DE4AF6F31D71B5A400A148C9 /* station.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4AF6F21D71B5A400A148C9 /* station.png */; };
 		DE4AF6F51D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */; };
 		DE4AF6F61D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */; };
@@ -92,6 +95,7 @@
 		1B75392B1D71AE60009EFCE2 /* AllTrainScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTrainScheduleViewController.swift; sourceTree = "<group>"; };
 		1B75392F1D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTrainsMapViewController.swift; sourceTree = "<group>"; };
 		1B7539331D71B219009EFCE2 /* upTrains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = upTrains.json; path = Resources/upTrains.json; sourceTree = "<group>"; };
+		1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = LiveUserCoordinates.json; path = Resources/LiveUserCoordinates.json; sourceTree = "<group>"; };
 		4FAEB8D08A02059EE4A7A5FC /* Pods-traintracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traintracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-traintracker/Pods-traintracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6942D96AEBD470A1A56FBC2F /* libPods-traintracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traintracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CE6E2FECA6F74653CC779D /* Pods-traintracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traintracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-traintracker/Pods-traintracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		1B7539201D718A87009EFCE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */,
 				DE4AF6F21D71B5A400A148C9 /* station.png */,
 				1B7539331D71B219009EFCE2 /* upTrains.json */,
 				1B7539291D71A2A1009EFCE2 /* FontAwesome.otf */,
@@ -412,6 +417,7 @@
 			files = (
 				DE7612971D71676F0093B345 /* LaunchScreen.storyboard in Resources */,
 				1B75392A1D71A2A1009EFCE2 /* FontAwesome.otf in Resources */,
+				1B7539381D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */,
 				DE4AF6F31D71B5A400A148C9 /* station.png in Resources */,
 				DE7612941D71676F0093B345 /* Assets.xcassets in Resources */,
 				1B7539341D71B219009EFCE2 /* upTrains.json in Resources */,
@@ -426,6 +432,7 @@
 			files = (
 				1B7539271D718B07009EFCE2 /* stationlist.json in Resources */,
 				1B7539351D71B219009EFCE2 /* upTrains.json in Resources */,
+				1B7539391D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +442,7 @@
 			files = (
 				1B7539281D718B07009EFCE2 /* stationlist.json in Resources */,
 				1B7539361D71B219009EFCE2 /* upTrains.json in Resources */,
+				1B75393A1D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -85,8 +85,8 @@ class UpcomingTrainsMapViewController: UIViewController {
                 marker.opacity = 1.0
                 marker.iconView.layer.backgroundColor = UIColor.greenColor().CGColor;
             } else if (stationName == previousStation!["Station"] as! String) {
-                marker.opacity = 1.0
-                marker.iconView.layer.backgroundColor = UIColor.redColor().CGColor;
+//                marker.opacity = 1.0
+//                marker.iconView.layer.backgroundColor = UIColor.redColor().CGColor;
             }
         }
     }

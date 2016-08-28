@@ -34,7 +34,7 @@ class AllTrainScheduleViewController: UITableViewController {
             print("Invalid filename/path.")
         }
         
-        stationName = selectedStation["Station"] as! String
+        stationName = selectedStation["Station"] as? String
         
         trainsTimeTable = trainsTimeTable.filter( { $0[stationName!] != nil } )
         
@@ -98,7 +98,7 @@ class AllTrainScheduleViewController: UITableViewController {
         
         if (indexPath.section == 0) {
             cell.textLabel?.text = "View upcoming trains on Map"
-            cell.accessoryView = nil
+            cell.detailTextLabel!.text = ""
         } else {
             let object = self.trainsTimeTable[indexPath.row]
             self.configureCell(cell, withObject: object)
