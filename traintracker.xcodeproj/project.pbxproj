@@ -25,6 +25,8 @@
 		1B7539391D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */; };
 		1B75393A1D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */; };
 		DE20E7971D72AFB90040513F /* downTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = DE20E7961D72AFB90040513F /* downTrains.json */; };
+		DE20E7991D72BE790040513F /* stationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE20E7981D72BE790040513F /* stationicon.png */; };
+		DE20E79B1D72BFE00040513F /* trainicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE20E79A1D72BFE00040513F /* trainicon.png */; };
 		DE4AF6F31D71B5A400A148C9 /* station.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4AF6F21D71B5A400A148C9 /* station.png */; };
 		DE4AF6F51D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */; };
 		DE4AF6F61D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */; };
@@ -101,6 +103,8 @@
 		6942D96AEBD470A1A56FBC2F /* libPods-traintracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traintracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CE6E2FECA6F74653CC779D /* Pods-traintracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traintracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-traintracker/Pods-traintracker.release.xcconfig"; sourceTree = "<group>"; };
 		DE20E7961D72AFB90040513F /* downTrains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = downTrains.json; path = Resources/downTrains.json; sourceTree = "<group>"; };
+		DE20E7981D72BE790040513F /* stationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stationicon.png; path = Resources/stationicon.png; sourceTree = "<group>"; };
+		DE20E79A1D72BFE00040513F /* trainicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trainicon.png; path = Resources/trainicon.png; sourceTree = "<group>"; };
 		DE4AF6F21D71B5A400A148C9 /* station.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = station.png; path = Resources/station.png; sourceTree = "<group>"; };
 		DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTrainScheduleViewController.swift; sourceTree = "<group>"; };
 		DE7612841D71676F0093B345 /* traintracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = traintracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +188,8 @@
 		1B7539201D718A87009EFCE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE20E79A1D72BFE00040513F /* trainicon.png */,
+				DE20E7981D72BE790040513F /* stationicon.png */,
 				DE20E7961D72AFB90040513F /* downTrains.json */,
 				1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */,
 				DE4AF6F21D71B5A400A148C9 /* station.png */,
@@ -382,6 +388,7 @@
 				TargetAttributes = {
 					DE7612831D71676F0093B345 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8V2AY94ZSS;
 					};
 					DE76129C1D7167700093B345 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -427,6 +434,8 @@
 				1B7539341D71B219009EFCE2 /* upTrains.json in Resources */,
 				1B7539261D718B07009EFCE2 /* stationlist.json in Resources */,
 				DE7612921D71676F0093B345 /* Main.storyboard in Resources */,
+				DE20E79B1D72BFE00040513F /* trainicon.png in Resources */,
+				DE20E7991D72BE790040513F /* stationicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,11 +700,14 @@
 			baseConfigurationReference = 4FAEB8D08A02059EE4A7A5FC /* Pods-traintracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = traintracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiuso.traintracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -704,11 +716,14 @@
 			baseConfigurationReference = B5CE6E2FECA6F74653CC779D /* Pods-traintracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = traintracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiuso.traintracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
