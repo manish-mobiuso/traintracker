@@ -191,6 +191,7 @@ class AllTrainScheduleViewController: UITableViewController {
             if let context = UIApplication.sharedApplication().keyWindow?.rootViewController {
                 let vc: UpcomingTrainsMapViewController = context.storyboard?.instantiateViewControllerWithIdentifier("UpcomingTrainsMapViewController") as! UpcomingTrainsMapViewController
                 vc.selectedStation = selectedStation
+                vc.direction = direction
                 vc.navigationItem.leftItemsSupplementBackButton = true
                 
                 (context as? UINavigationController)?.pushViewController(vc, animated: true)
@@ -224,6 +225,7 @@ class AllTrainScheduleViewController: UITableViewController {
         
         cell.textLabel!.text = "\(object[stationName!] as! String!)"
         cell.detailTextLabel!.text = "\(startLocation!) - \(endLocation!)"
+        cell.imageView!.image = UIImage(named: "trainicon")
     }
 
 

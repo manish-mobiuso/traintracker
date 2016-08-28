@@ -21,9 +21,15 @@
 		1B7539341D71B219009EFCE2 /* upTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539331D71B219009EFCE2 /* upTrains.json */; };
 		1B7539351D71B219009EFCE2 /* upTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539331D71B219009EFCE2 /* upTrains.json */; };
 		1B7539361D71B219009EFCE2 /* upTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539331D71B219009EFCE2 /* upTrains.json */; };
-		1B7539381D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */; };
-		1B7539391D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */; };
-		1B75393A1D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */; };
+		1BAAE5191D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BAAE5141D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json */; };
+		1BAAE51A1D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BAAE5141D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json */; };
+		1BAAE51B1D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BAAE5141D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json */; };
+		1BAAE51C1D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BAAE5151D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json */; };
+		1BAAE51D1D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BAAE5151D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json */; };
+		1BAAE51E1D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BAAE5151D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json */; };
+		1BAAE5201D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BAAE51F1D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json */; };
+		1BAAE5211D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BAAE51F1D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json */; };
+		1BAAE5221D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BAAE51F1D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json */; };
 		DE20E7971D72AFB90040513F /* downTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = DE20E7961D72AFB90040513F /* downTrains.json */; };
 		DE20E7991D72BE790040513F /* stationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE20E7981D72BE790040513F /* stationicon.png */; };
 		DE20E79B1D72BFE00040513F /* trainicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE20E79A1D72BFE00040513F /* trainicon.png */; };
@@ -98,7 +104,9 @@
 		1B75392B1D71AE60009EFCE2 /* AllTrainScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTrainScheduleViewController.swift; sourceTree = "<group>"; };
 		1B75392F1D71AE99009EFCE2 /* UpcomingTrainsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTrainsMapViewController.swift; sourceTree = "<group>"; };
 		1B7539331D71B219009EFCE2 /* upTrains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = upTrains.json; path = Resources/upTrains.json; sourceTree = "<group>"; };
-		1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = LiveUserCoordinates.json; path = Resources/LiveUserCoordinates.json; sourceTree = "<group>"; };
+		1BAAE5141D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Byculla_To_ChinchPokli_DownTrain.json; path = Resources/Byculla_To_ChinchPokli_DownTrain.json; sourceTree = "<group>"; };
+		1BAAE5151D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Chinchpokli_To_Byculla_UpTrain.json; path = Resources/Chinchpokli_To_Byculla_UpTrain.json; sourceTree = "<group>"; };
+		1BAAE51F1D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CurryRoad_To_Chinchpokli_UpTrain.json; path = Resources/CurryRoad_To_Chinchpokli_UpTrain.json; sourceTree = "<group>"; };
 		4FAEB8D08A02059EE4A7A5FC /* Pods-traintracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traintracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-traintracker/Pods-traintracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6942D96AEBD470A1A56FBC2F /* libPods-traintracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traintracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CE6E2FECA6F74653CC779D /* Pods-traintracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traintracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-traintracker/Pods-traintracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,8 +198,10 @@
 			children = (
 				DE20E79A1D72BFE00040513F /* trainicon.png */,
 				DE20E7981D72BE790040513F /* stationicon.png */,
+				1BAAE51F1D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json */,
+				1BAAE5141D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json */,
+				1BAAE5151D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json */,
 				DE20E7961D72AFB90040513F /* downTrains.json */,
-				1B7539371D727D3E009EFCE2 /* LiveUserCoordinates.json */,
 				DE4AF6F21D71B5A400A148C9 /* station.png */,
 				1B7539331D71B219009EFCE2 /* upTrains.json */,
 				1B7539291D71A2A1009EFCE2 /* FontAwesome.otf */,
@@ -426,10 +436,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7612971D71676F0093B345 /* LaunchScreen.storyboard in Resources */,
+				1BAAE5191D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json in Resources */,
 				1B75392A1D71A2A1009EFCE2 /* FontAwesome.otf in Resources */,
 				DE20E7971D72AFB90040513F /* downTrains.json in Resources */,
-				1B7539381D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */,
+				1BAAE51C1D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json in Resources */,
 				DE4AF6F31D71B5A400A148C9 /* station.png in Resources */,
+				1BAAE5201D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json in Resources */,
 				DE7612941D71676F0093B345 /* Assets.xcassets in Resources */,
 				1B7539341D71B219009EFCE2 /* upTrains.json in Resources */,
 				1B7539261D718B07009EFCE2 /* stationlist.json in Resources */,
@@ -445,7 +457,9 @@
 			files = (
 				1B7539271D718B07009EFCE2 /* stationlist.json in Resources */,
 				1B7539351D71B219009EFCE2 /* upTrains.json in Resources */,
-				1B7539391D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */,
+				1BAAE5211D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json in Resources */,
+				1BAAE51D1D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json in Resources */,
+				1BAAE51A1D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +469,9 @@
 			files = (
 				1B7539281D718B07009EFCE2 /* stationlist.json in Resources */,
 				1B7539361D71B219009EFCE2 /* upTrains.json in Resources */,
-				1B75393A1D727D3E009EFCE2 /* LiveUserCoordinates.json in Resources */,
+				1BAAE5221D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json in Resources */,
+				1BAAE51E1D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json in Resources */,
+				1BAAE51B1D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
