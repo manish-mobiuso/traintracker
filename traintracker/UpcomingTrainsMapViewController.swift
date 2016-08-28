@@ -11,8 +11,11 @@ import GoogleMaps
 
 class UpcomingTrainsMapViewController: UIViewController {
     var stations : [NSDictionary] = []
+    var movingTrainDetails : [NSDictionary] = []
     var selectedStation : NSDictionary!
     var direction : Bool?
+    var currentPosition : Int?
+    var mapView : GMSMapView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +29,11 @@ class UpcomingTrainsMapViewController: UIViewController {
     }
     
     override func loadView() {
-        if let path = NSBundle.mainBundle().pathForResource("stationlist", ofType: "json") {
-            do {
-                let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
-                let stationlist: [NSDictionary] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
-                for station: NSDictionary in stationlist {
-                    stations.append(station)
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        } else {
-            print("Invalid filename/path.")
-        }
+        
+        loadTrainStationList()
+        
+        loadTrainPositions()
+
 
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
@@ -49,8 +44,8 @@ class UpcomingTrainsMapViewController: UIViewController {
         self.title = selectedStationName
         
         let camera = GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom:zoomLevel)
-        let mapView = GMSMapView.mapWithFrame(CGRect.zero, camera: camera)
-        mapView.myLocationEnabled = true
+        mapView = GMSMapView.mapWithFrame(CGRect.zero, camera: camera)
+        mapView!.myLocationEnabled = true
         view = mapView
         
         var previousStation : NSDictionary?
@@ -65,9 +60,8 @@ class UpcomingTrainsMapViewController: UIViewController {
             let index = stations .indexOf(selectedStation)
             previousStation = stations[(index! + 1)]
         }
-
         
-        for station in stations {
+        /*for station in stations {
             
             // Creates a marker in the center of the map.
             let marker = GMSMarker()
@@ -81,6 +75,8 @@ class UpcomingTrainsMapViewController: UIViewController {
             marker.opacity = 0.5
             marker.map = mapView
             
+            
+            
             if (stationName == selectedStationName) {
                 marker.opacity = 1.0
                 marker.iconView.layer.backgroundColor = UIColor.greenColor().CGColor;
@@ -88,7 +84,78 @@ class UpcomingTrainsMapViewController: UIViewController {
 //                marker.opacity = 1.0
 //                marker.iconView.layer.backgroundColor = UIColor.redColor().CGColor;
             }
+        }*/
+        
+        let geoFenceCircle = GMSCircle.init() as GMSCircle
+        geoFenceCircle.radius = 150; // Meters
+        let stationCoordinate = CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude) as CLLocationCoordinate2D
+        geoFenceCircle.position = stationCoordinate; // Some CLLocationCoordinate2D position
+        geoFenceCircle.fillColor = UIColor.init(white: 0.7, alpha: 0.5)
+        geoFenceCircle.strokeWidth = 2;
+        geoFenceCircle.strokeColor = UIColor.orangeColor();
+        geoFenceCircle.map = mapView;
+        
+        currentPosition = 0
+        update()
+        
+        let timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "update", userInfo: nil, repeats: true)
+        timer.fire()
+    }
+    
+    func loadTrainStationList () {
+    
+        // loading station list
+        if let path = NSBundle.mainBundle().pathForResource("stationlist", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let stationlist: [NSDictionary] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
+                for station: NSDictionary in stationlist {
+                    stations.append(station)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
         }
+    }
+    
+    func loadTrainPositions() {
+        if let path = NSBundle.mainBundle().pathForResource("LiveUserCoordinates", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let trainPositionList: [Dictionary<String, String>] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [Dictionary<String, String>]
+                for trainPosition in trainPositionList {
+                    movingTrainDetails.append(trainPosition)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        print("loaded movingTrainDetails")
+    }
+    
+    func update() {
+        if (movingTrainDetails.count > currentPosition) {
+            updateTrainPosition(movingTrainDetails[self.currentPosition!] as! Dictionary<String, String>, mapView: self.mapView!)
+            currentPosition = currentPosition! + 1
+        }
+    }
+    
+    func updateTrainPosition(trainPosition:Dictionary<String, String>, mapView: GMSMapView) {
+        // Creates a marker in the center of the map.
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: (trainPosition["Latitude"] as NSString!).doubleValue, longitude: (trainPosition["Longitude"] as NSString!).doubleValue)
+        
+        let stationName = trainPosition["trainid"] as NSString! as String;
+        marker.title = stationName
+        marker.iconView = UIImageView.init(image: UIImage.init(named: "station"))
+        marker.iconView.layer.cornerRadius = 8.0
+        marker.iconView.layer.backgroundColor = UIColor.clearColor().CGColor;
+        marker.opacity = 0.5
+        marker.map = mapView
     }
     
     /*
