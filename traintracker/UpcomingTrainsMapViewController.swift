@@ -13,9 +13,10 @@ class UpcomingTrainsMapViewController: UIViewController {
     var stations : [NSDictionary] = []
     var movingTrainDetails : [NSDictionary] = []
     var selectedStation : NSDictionary!
-    var direction : Bool?
+    var direction : String?
     var currentPosition : Int?
     var mapView : GMSMapView?
+    var marker : GMSMarker?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +51,13 @@ class UpcomingTrainsMapViewController: UIViewController {
         
         var previousStation : NSDictionary?
         
-        // 0 up: pick the station before selected station
-        if ((direction) != nil) {
+        // 0 up: pick the station before selected station (towards CST)
+        if ((direction) == "UP") {
             
             let index = stations .indexOf(selectedStation)
             previousStation = stations[(index! - 1)]
             
-        } else { // 1 down: pick the station after selected station
+        } else { // 1 down: pick the station after selected station (Towards Thane)
             let index = stations .indexOf(selectedStation)
             previousStation = stations[(index! + 1)]
         }
@@ -95,6 +96,14 @@ class UpcomingTrainsMapViewController: UIViewController {
         geoFenceCircle.strokeColor = UIColor.orangeColor();
         geoFenceCircle.map = mapView;
         
+        
+        marker = GMSMarker()
+        marker!.iconView = UIImageView.init(image: UIImage.init(named: "station"))
+        marker!.iconView.layer.cornerRadius = 8.0
+        marker!.iconView.layer.backgroundColor = UIColor.clearColor().CGColor;
+        marker!.opacity = 0.5
+        marker!.map = mapView
+
         currentPosition = 0
         update()
         
@@ -121,7 +130,13 @@ class UpcomingTrainsMapViewController: UIViewController {
     }
     
     func loadTrainPositions() {
-        if let path = NSBundle.mainBundle().pathForResource("LiveUserCoordinates", ofType: "json") {
+        var fileName = "CurryRoad_To_Chinchpokli_UpTrain"
+        
+        if (direction == "DOWN") {
+            fileName = "Byculla_To_ChinchPokli_DownTrain"
+        }
+        
+        if let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json") {
             do {
                 let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 let trainPositionList: [Dictionary<String, String>] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [Dictionary<String, String>]
@@ -146,16 +161,16 @@ class UpcomingTrainsMapViewController: UIViewController {
     
     func updateTrainPosition(trainPosition:Dictionary<String, String>, mapView: GMSMapView) {
         // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: (trainPosition["Latitude"] as NSString!).doubleValue, longitude: (trainPosition["Longitude"] as NSString!).doubleValue)
+//        marker = GMSMarker()
+        marker!.position = CLLocationCoordinate2D(latitude: (trainPosition["Latitude"] as NSString!).doubleValue, longitude: (trainPosition["Longitude"] as NSString!).doubleValue)
         
-        let stationName = trainPosition["trainid"] as NSString! as String;
-        marker.title = stationName
-        marker.iconView = UIImageView.init(image: UIImage.init(named: "station"))
-        marker.iconView.layer.cornerRadius = 8.0
-        marker.iconView.layer.backgroundColor = UIColor.clearColor().CGColor;
-        marker.opacity = 0.5
-        marker.map = mapView
+        let stationName = trainPosition["TrainId"] as NSString! as String;
+        marker!.title = stationName
+//        marker!.iconView = UIImageView.init(image: UIImage.init(named: "station"))
+//        marker!.iconView.layer.cornerRadius = 8.0
+//        marker!.iconView.layer.backgroundColor = UIColor.clearColor().CGColor;
+//        marker!.opacity = 0.5
+//        marker!.map = mapView
     }
     
     /*

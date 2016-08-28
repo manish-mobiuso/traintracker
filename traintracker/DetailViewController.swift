@@ -127,6 +127,7 @@ class DetailViewController: UITableViewController {
     
     func configureCell(cell: UITableViewCell, withObject object: NSString) {
         cell.textLabel!.text = object as String
+        cell.imageView!.image = UIImage(named: "stationicon")
     }
 
 }
