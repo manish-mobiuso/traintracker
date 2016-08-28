@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DE7612831D71676F0093B345"
-               BuildableName = "traintracker.app"
+               BuildableName = "TrainTracker.app"
                BlueprintName = "traintracker"
                ReferencedContainer = "container:traintracker.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DE7612831D71676F0093B345"
-            BuildableName = "traintracker.app"
+            BuildableName = "TrainTracker.app"
             BlueprintName = "traintracker"
             ReferencedContainer = "container:traintracker.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DE7612831D71676F0093B345"
-            BuildableName = "traintracker.app"
+            BuildableName = "TrainTracker.app"
             BlueprintName = "traintracker"
             ReferencedContainer = "container:traintracker.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DE7612831D71676F0093B345"
-            BuildableName = "traintracker.app"
+            BuildableName = "TrainTracker.app"
             BlueprintName = "traintracker"
             ReferencedContainer = "container:traintracker.xcodeproj">
          </BuildableReference>
