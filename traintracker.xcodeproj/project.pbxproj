@@ -33,6 +33,7 @@
 		DE20E7971D72AFB90040513F /* downTrains.json in Resources */ = {isa = PBXBuildFile; fileRef = DE20E7961D72AFB90040513F /* downTrains.json */; };
 		DE20E7991D72BE790040513F /* stationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE20E7981D72BE790040513F /* stationicon.png */; };
 		DE20E79B1D72BFE00040513F /* trainicon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE20E79A1D72BFE00040513F /* trainicon.png */; };
+		DE20E79D1D72C4100040513F /* train.png in Resources */ = {isa = PBXBuildFile; fileRef = DE20E79C1D72C4100040513F /* train.png */; };
 		DE4AF6F31D71B5A400A148C9 /* station.png in Resources */ = {isa = PBXBuildFile; fileRef = DE4AF6F21D71B5A400A148C9 /* station.png */; };
 		DE4AF6F51D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */; };
 		DE4AF6F61D71EF8100A148C9 /* SingleTrainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */; };
@@ -113,9 +114,10 @@
 		DE20E7961D72AFB90040513F /* downTrains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = downTrains.json; path = Resources/downTrains.json; sourceTree = "<group>"; };
 		DE20E7981D72BE790040513F /* stationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stationicon.png; path = Resources/stationicon.png; sourceTree = "<group>"; };
 		DE20E79A1D72BFE00040513F /* trainicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trainicon.png; path = Resources/trainicon.png; sourceTree = "<group>"; };
+		DE20E79C1D72C4100040513F /* train.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = train.png; path = Resources/train.png; sourceTree = "<group>"; };
 		DE4AF6F21D71B5A400A148C9 /* station.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = station.png; path = Resources/station.png; sourceTree = "<group>"; };
 		DE4AF6F41D71EF8100A148C9 /* SingleTrainScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTrainScheduleViewController.swift; sourceTree = "<group>"; };
-		DE7612841D71676F0093B345 /* traintracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = traintracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7612841D71676F0093B345 /* TrainTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7612871D71676F0093B345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE76128A1D71676F0093B345 /* traintracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = traintracker.xcdatamodel; sourceTree = "<group>"; };
 		DE76128C1D71676F0093B345 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		1B7539201D718A87009EFCE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE20E79C1D72C4100040513F /* train.png */,
 				DE20E79A1D72BFE00040513F /* trainicon.png */,
 				DE20E7981D72BE790040513F /* stationicon.png */,
 				1BAAE51F1D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json */,
@@ -244,7 +247,7 @@
 		DE7612851D71676F0093B345 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE7612841D71676F0093B345 /* traintracker.app */,
+				DE7612841D71676F0093B345 /* TrainTracker.app */,
 				DE76129D1D7167700093B345 /* traintrackerTests.xctest */,
 				DE7612A81D7167700093B345 /* traintrackerUITests.xctest */,
 			);
@@ -347,7 +350,7 @@
 			);
 			name = traintracker;
 			productName = traintracker;
-			productReference = DE7612841D71676F0093B345 /* traintracker.app */;
+			productReference = DE7612841D71676F0093B345 /* TrainTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DE76129C1D7167700093B345 /* traintrackerTests */ = {
@@ -439,6 +442,7 @@
 				1BAAE5191D72BC85009B1EED /* Byculla_To_ChinchPokli_DownTrain.json in Resources */,
 				1B75392A1D71A2A1009EFCE2 /* FontAwesome.otf in Resources */,
 				DE20E7971D72AFB90040513F /* downTrains.json in Resources */,
+				DE20E79D1D72C4100040513F /* train.png in Resources */,
 				1BAAE51C1D72BC85009B1EED /* Chinchpokli_To_Byculla_UpTrain.json in Resources */,
 				DE4AF6F31D71B5A400A148C9 /* station.png in Resources */,
 				1BAAE5201D72C0B6009B1EED /* CurryRoad_To_Chinchpokli_UpTrain.json in Resources */,
@@ -722,7 +726,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiuso.traintracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TrainTracker;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -738,7 +742,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiuso.traintracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TrainTracker;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

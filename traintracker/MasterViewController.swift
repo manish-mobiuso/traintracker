@@ -83,7 +83,8 @@ class MasterViewController: UITableViewController {
 
             if let context = UIApplication.sharedApplication().keyWindow?.rootViewController {
                 let vc: AllTrainScheduleViewController = context.storyboard?.instantiateViewControllerWithIdentifier("AllTrainScheduleViewController") as! AllTrainScheduleViewController
-                vc.selectedStation = stations[3] // Byculla
+                vc.selectedStation = stations[4] // Chinchpokali
+                vc.direction = "UP"
                 vc.navigationItem.leftItemsSupplementBackButton = true
                 
                 (context as? UINavigationController)?.pushViewController(vc, animated: true)
