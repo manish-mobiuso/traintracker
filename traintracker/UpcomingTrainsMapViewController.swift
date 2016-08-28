@@ -98,7 +98,7 @@ class UpcomingTrainsMapViewController: UIViewController {
         
         
         marker = GMSMarker()
-        marker!.iconView = UIImageView.init(image: UIImage.init(named: "station"))
+        marker!.iconView = UIImageView.init(image: UIImage.init(named: "train"))
         marker!.iconView.layer.cornerRadius = 8.0
         marker!.iconView.layer.backgroundColor = UIColor.clearColor().CGColor;
         marker!.opacity = 0.5
