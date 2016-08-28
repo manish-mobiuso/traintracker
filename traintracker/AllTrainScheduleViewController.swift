@@ -11,8 +11,11 @@ import UIKit
 class AllTrainScheduleViewController: UITableViewController {
     
     var trainsTimeTable : [Dictionary<String, String>] = []
+    var uptrainsTimeTable : [Dictionary<String, String>] = []
+    var downtrainsTimeTable : [Dictionary<String, String>] = []
     var selectedStation : NSDictionary!
     var stationName: String?
+    var direction: String?
     
     var stationsArray: [String] = ["Khopoli", "Lowjee", "Dolavi", "Kelavi", "Palasdari", "Karjat", "Bhivpuri", "Neral", "Shelu", "Vangani", "Badlapur", "Ambernath", "Ulhasnagar", "Vithalwadi", "Kalyan", "Thakurli", "Dombivili", "Kopar", "Diva", "Mumbra", "Kalwa", "Thane", "Mulund", "Nahur", "Bhandup", "Kanjurmarg", "Vikhroli", "Ghatkopar", "Vidhyavihar", "Kurla", "Sion", "Matunga", "Dadar", "Parel", "Currey Road", "Chinchpokli", "Byculla", "Sandhurst Road", "Masjid", "Mumbai CST"]
 
@@ -25,7 +28,7 @@ class AllTrainScheduleViewController: UITableViewController {
                 let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 let stationlist: [Dictionary<String, String>] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [Dictionary<String, String>]
                 for station in stationlist {
-                    trainsTimeTable.append(station)
+                    uptrainsTimeTable.append(station)
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)
@@ -33,11 +36,35 @@ class AllTrainScheduleViewController: UITableViewController {
         } else {
             print("Invalid filename/path.")
         }
-        
+
+        if let path = NSBundle.mainBundle().pathForResource("downTrains", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let stationlist: [Dictionary<String, String>] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [Dictionary<String, String>]
+                for station in stationlist {
+                    downtrainsTimeTable.append(station)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+
         stationName = selectedStation["Station"] as? String
+
+        self.title = stationName
         
+        if (direction == "UP") {
+            trainsTimeTable = uptrainsTimeTable
+        } else {
+            trainsTimeTable = downtrainsTimeTable
+        }
+        
+        // train stop at this station
         trainsTimeTable = trainsTimeTable.filter( { $0[stationName!] != nil } )
         
+        // sort trains with the time at which they arrive on the station from 00:00 to 23:59
         trainsTimeTable = trainsTimeTable.sort({ (left, right) -> Bool in
             var lefttime = left[stationName!]!
             var righttime = right[stationName!]!
@@ -51,9 +78,10 @@ class AllTrainScheduleViewController: UITableViewController {
             return (leftday == rightday) ? (lefttime < righttime) : (leftday < rightday)
         })
         
+        // filter trains after this time
         let time: String = getFormattedDate(NSDate(), format: "hh:mm a").lowercaseString
         
-        trainsTimeTable = trainsTimeTable.filter({ (element) -> Bool in
+        var selectedTrainsTimeTable = trainsTimeTable.filter({ (element) -> Bool in
             var lefttime = time
             var righttime = element[stationName!]!
             
@@ -65,6 +93,17 @@ class AllTrainScheduleViewController: UITableViewController {
             
             return (leftday == rightday) ? (lefttime < righttime) : (leftday < rightday)
         })
+        
+        selectedTrainsTimeTable.appendContentsOf(trainsTimeTable)
+        
+        trainsTimeTable.removeAll(keepCapacity: false)
+        
+        // pick 3 trains
+        for i in 0...2 {
+            if (i < selectedTrainsTimeTable.count) {
+                trainsTimeTable.append(selectedTrainsTimeTable[i]);
+            }
+        }
     }
     
     func getFormattedDate(date:NSDate, format:String) -> String {
@@ -171,7 +210,9 @@ class AllTrainScheduleViewController: UITableViewController {
         var startLocation: String?
         var endLocation: String?
         
-        for station in stationsArray {
+        let localStationArr = (direction == "UP") ? stationsArray : stationsArray.reverse()
+        
+        for station in localStationArr {
             if (object[station] != nil) {
                 if (startLocation == nil) {
                     startLocation = station

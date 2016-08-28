@@ -71,6 +71,38 @@ class DetailViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var alertController = UIAlertController(title: "Choose Direction", message: "Please choose the direction", preferredStyle: .Alert)
+        
+        alertController.addAction(UIAlertAction(title: "CST", style: .Default) { (action) in
+                if let context = UIApplication.sharedApplication().keyWindow?.rootViewController {
+                    let vc: AllTrainScheduleViewController = context.storyboard?.instantiateViewControllerWithIdentifier("AllTrainScheduleViewController") as! AllTrainScheduleViewController
+                    vc.selectedStation = self.stations[indexPath.row]
+                    vc.direction = "UP"
+                    vc.navigationItem.leftItemsSupplementBackButton = true
+                    
+                    (context as? UINavigationController)?.pushViewController(vc, animated: true)
+                }
+            }
+        )
+        
+        alertController.addAction(UIAlertAction(title: "Thane", style: .Default) { (action) in
+                if let context = UIApplication.sharedApplication().keyWindow?.rootViewController {
+                    let vc: AllTrainScheduleViewController = context.storyboard?.instantiateViewControllerWithIdentifier("AllTrainScheduleViewController") as! AllTrainScheduleViewController
+                    vc.selectedStation = self.stations[indexPath.row]
+                    vc.direction = "DOWN"
+                    vc.navigationItem.leftItemsSupplementBackButton = true
+                    
+                    (context as? UINavigationController)?.pushViewController(vc, animated: true)
+                }
+            }
+        )
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
     // MARK: - Table View
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -90,7 +122,7 @@ class DetailViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
     
     func configureCell(cell: UITableViewCell, withObject object: NSString) {

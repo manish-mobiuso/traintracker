@@ -85,9 +85,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="9aK-tX-Uoj" kind="push" identifier="alltrainsTimeTable" id="2LV-ET-2fa"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
