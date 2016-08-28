@@ -43,15 +43,54 @@ class MasterViewController: UITableViewController {
 
     // MARK: - Segues
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-            let object = self.userOptions[indexPath.row]
-                let controller = segue.destinationViewController as! DetailViewController
-                controller.detailItem = object
-//                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showDetail" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//            let object = self.userOptions[indexPath.row]
+//                let controller = segue.destinationViewController as! DetailViewController
+//                controller.detailItem = object
+////                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+//                controller.navigationItem.leftItemsSupplementBackButton = true
+//            }
+//        }
+//    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case 0:
+            if let context = UIApplication.sharedApplication().keyWindow?.rootViewController {
+                let vc: DetailViewController = context.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+                vc.navigationItem.leftItemsSupplementBackButton = true
+                
+                (context as? UINavigationController)?.pushViewController(vc, animated: true)
             }
+            break
+        case 1:
+            var stations : [NSDictionary] = []
+            if let path = NSBundle.mainBundle().pathForResource("stationlist", ofType: "json") {
+                do {
+                    let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                    let stationlist: [NSDictionary] = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
+                    for station: NSDictionary in stationlist {
+                        stations.append(station)
+                    }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+            } else {
+                print("Invalid filename/path.")
+            }
+
+            if let context = UIApplication.sharedApplication().keyWindow?.rootViewController {
+                let vc: AllTrainScheduleViewController = context.storyboard?.instantiateViewControllerWithIdentifier("AllTrainScheduleViewController") as! AllTrainScheduleViewController
+                vc.selectedStation = stations[3] // Byculla
+                vc.navigationItem.leftItemsSupplementBackButton = true
+                
+                (context as? UINavigationController)?.pushViewController(vc, animated: true)
+            }
+            break
+        default:
+            break
         }
     }
 

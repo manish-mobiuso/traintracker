@@ -46,9 +46,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="eLd-pV-inU" kind="push" identifier="showDetail" id="DtC-YS-wek"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -66,14 +63,14 @@
         <!--Boarding Station-->
         <scene sceneID="Bgc-WJ-NzN">
             <objects>
-                <tableViewController id="eLd-pV-inU" customClass="DetailViewController" customModule="traintracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DetailViewController" id="eLd-pV-inU" customClass="DetailViewController" customModule="traintracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cUc-a3-0m9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StationCell" textLabel="lLI-U7-0L2" style="IBUITableViewCellStyleDefault" id="cll-Eo-9fF">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cll-Eo-9fF" id="Cd9-MG-kbE">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -107,14 +104,14 @@
         <!--All Train Schedule View Controller-->
         <scene sceneID="jo2-8o-Foa">
             <objects>
-                <tableViewController id="9aK-tX-Uoj" customClass="AllTrainScheduleViewController" customModule="traintracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AllTrainScheduleViewController" id="9aK-tX-Uoj" customClass="AllTrainScheduleViewController" customModule="traintracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NTX-jS-YCo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StationCellIdentifier" textLabel="aNM-9f-pXE" detailTextLabel="GJp-sz-ThO" style="IBUITableViewCellStyleSubtitle" id="3Do-UC-hgA">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Do-UC-hgA" id="75g-U8-Xhp">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
